@@ -1,6 +1,9 @@
 1000.times do
   Person.create(
     first_name: Faker::Name.first_name,
-    last_name:  Faker::Name.last_name
+    last_name:  Faker::Name.last_name,
+    occupation: Faker::Company.profession,
+    power:      Faker::Superhero.power,
+    name:       Faker::Superhero.name
   )
 end
