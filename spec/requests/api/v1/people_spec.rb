@@ -5,7 +5,7 @@ describe "People", type: :request do
     before { get "/api/v1/people", { format: :json } }
 
     it "responds with OK status" do
-      expect(response).to eq(200)
+      expect(response.status).to eq(200)
     end
   end
 end
