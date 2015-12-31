@@ -1,6 +1,6 @@
-class CreatePeople < ActiveRecord::Migration
+class CreateSuperheroes < ActiveRecord::Migration
   def change
-    create_table :people do |t|
+    create_table :superheroes do |t|
       t.string :first_name
       t.string :last_name
       t.string :occupation
