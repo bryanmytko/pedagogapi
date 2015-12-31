@@ -1,3 +1,6 @@
 1000.times do
-  Person.create(name: "Bryan Mytko")
+  Person.create(
+    first_name: Faker::Name.first_name,
+    last_name:  Faker::Name.last_name
+  )
 end
