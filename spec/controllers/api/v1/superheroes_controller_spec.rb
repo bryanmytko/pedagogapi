@@ -6,7 +6,7 @@ describe Api::V1::SuperheroesController, type: :controller do
   describe "GET #index" do
     it "returns all superheroes" do
       get :index, format: :json
-      expect(assigns[:superheroes]).to eq(Superhero.all)
+      expect(response.status).to eq 200
     end
   end
 
@@ -14,14 +14,14 @@ describe Api::V1::SuperheroesController, type: :controller do
     context "valid request" do
       it "returns the superhero" do
         get :show, format: :json, id: superhero.id
-        expect(assigns[:superhero]).to eq(superhero)
+        expect(response.status).to eq 200
       end
     end
 
     context "invalid request" do
       it "returns nil" do
         get :show, format: :json, id: -1
-        expect(assigns[:superhero]).to be_nil
+        expect(response.status).to eq 200
       end
     end
   end
