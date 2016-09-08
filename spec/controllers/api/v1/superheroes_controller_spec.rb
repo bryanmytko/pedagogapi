@@ -13,15 +13,15 @@ describe Api::V1::SuperheroesController, type: :controller do
   describe "GET #show" do
     context "valid request" do
       it "returns the superhero" do
-        get :show, format: :json, id: superhero.id
+        get :show, format: :json, params: { id: superhero.id }
         expect(response.status).to eq 200
       end
     end
 
     context "invalid request" do
       it "returns nil" do
-        get :show, format: :json, id: -1
-        expect(response.status).to eq 200
+        get :show, format: :json, params: { id: -1 }
+        expect(response.status).to eq 404
       end
     end
   end
